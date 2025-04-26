@@ -10,7 +10,7 @@
          'rcm-v(?<currentValue>\d*?)',
       ],
       datasourceTemplate: 'custom.rcm',
-      depNameTemplate: 'rcm'
+      depNameTemplate: 'rcm',
       // Customizable: https://docs.renovatebot.com/modules/versioning/
       versioningTemplate: 'loose',
     },
