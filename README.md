@@ -4,4 +4,4 @@ Demonstrate how to use renovate to update a custom-versioned system in arbitrary
 
 ## Version
 
-This uses **rcm-v3**.
+This uses **rcm-v4**.
