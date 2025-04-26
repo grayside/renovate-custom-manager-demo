@@ -1,4 +1,5 @@
 {
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: ["config:recommended"],
 
   // https://docs.renovatebot.com/modules/manager/regex/
@@ -21,5 +22,12 @@
     rcm: {
         defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/rcm-versions.json'
     }
-  }
+  },
+
+  // Attempt to enable the manager
+  packageRules: [
+    {
+      matchManagers: ['custom.regex'],
+    }
+  ],
 }
