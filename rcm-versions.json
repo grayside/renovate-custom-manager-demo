@@ -2,13 +2,13 @@
   "releases": [
     {
         "version": "4",
-        "isDeprecated": true,
+        "isDeprecated": false,
         "releaseTimestamp": "2025-03-24T18:21Z",
         "isStable": true
     },
     {
         "version": "3",
-        "isDeprecated": false,
+        "isDeprecated": true,
         "releaseTimestamp": "2024-12-24T18:21Z",
         "isStable": true
     },
