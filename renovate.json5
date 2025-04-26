@@ -8,7 +8,7 @@
       customType: 'regex',
       fileMatch: ['README.md', '\.js$'],
       matchStrings: [
-         'rcm-v(?<currentValue>\d*)',
+         'rcm-v(?<currentValue>\\d*)',
       ],
       datasourceTemplate: 'custom.rcm',
       depNameTemplate: 'rcm',
@@ -20,14 +20,7 @@
   // https://docs.renovatebot.com/modules/datasource/custom/
   customDatasources: {
     rcm: {
-        defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/rcm-versions.json'
+        defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/{{packageName}}-versions.json'
     }
   },
-
-  // Attempt to enable the manager
-  packageRules: [
-    {
-      matchManagers: ['custom.regex'],
-    }
-  ],
 }
