@@ -1,0 +1,24 @@
+{
+  extends: ["config:recommended"],
+
+  // https://docs.renovatebot.com/modules/manager/regex/
+  customManagers: [
+    {
+      customType: 'regex',
+      fileMatch: ['README.md', '*.js$'],
+      matchStrings: [
+         "rcm-v<currentValue>",
+      ],
+      datasourceTemplate: "custom.rcm",
+      // Customizable: https://docs.renovatebot.com/modules/versioning/
+      versioningTemplate: 'loose',
+    },
+  ],
+
+  // https://docs.renovatebot.com/modules/datasource/custom/
+  customDatasources: {
+    rcm: {
+        defaultRegistryUrlTemplate: "https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/rcm-versions.json"
+    }
+  }
+}
