@@ -7,7 +7,7 @@
       customType: 'regex',
       fileMatch: ['README.md', '\.js$'],
       matchStrings: [
-         'rcm-v(?<currentValue>\d*?)',
+         'rcm-v(?<currentValue>\d*)',
       ],
       datasourceTemplate: 'custom.rcm',
       depNameTemplate: 'rcm',
