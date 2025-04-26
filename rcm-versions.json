@@ -1,0 +1,29 @@
+{
+  "releases": [
+    {
+        "version": "4",
+        "isDeprecated": true,
+        "releaseTimestamp": "2025-03-24T18:21Z",
+        "isStable": true
+    },
+    {
+        "version": "3",
+        "isDeprecated": false,
+        "releaseTimestamp": "2024-12-24T18:21Z",
+        "isStable": true
+    },
+    {
+        "version": "2",
+        "isDeprecated": true,
+        "releaseTimestamp": "2023-12-24T18:21Z",
+        "isStable": true
+    },
+    {
+      "version": "1",
+      "isDeprecated": true,
+      "releaseTimestamp": "2022-12-24T18:21Z",
+      "isStable": false
+    }
+  ],
+  "homepage": "https://github.com/grayside/renovate-custom-manager-demo"
+}
