@@ -4,23 +4,41 @@
 
   // https://docs.renovatebot.com/modules/manager/regex/
   customManagers: [
+    // The basic example where strings like basic-v\d+ are found.
     {
       customType: 'regex',
       fileMatch: ['README.md', '\.js$'],
       matchStrings: [
-         'rcm-v(?<currentValue>\\d*)',
+         'basic-v(?<currentValue>\\d+)',
       ],
-      datasourceTemplate: 'custom.rcm',
-      depNameTemplate: 'rcm',
+      datasourceTemplate: 'custom.basic',
+      depNameTemplate: 'basic',
       // Customizable: https://docs.renovatebot.com/modules/versioning/
       versioningTemplate: 'loose',
+    },
+
+    // The complex example needs to assemble package name and current version from interleaved values.
+    {
+      customType: 'regex',
+      fileMatch: ['README.md', '\.js$'],
+      matchStrings: [
+        // complex-10.2-purple, complex-10.2-purple-variant, complex-10.2-purple-variant-123
+        'complex-(?<currentValueMain>\\d+\\.\\d+)-(?<name>\\w+(?:\\-variant)?)(?:-(?<currentValuePatch>\\d+))?(?:-(?<prerelease>(?:limited|preorder)-\\d{2}-\\d{2}))?',
+      ],
+      datasourceTemplate: 'custom.complex',
+      depNameTemplate: 'complex-{{{name}}}',
+      // Customizable: https://docs.renovatebot.com/modules/versioning/
+      currentValueTemplate: '{{{currentValueMain}}}.{{#if currentValuePatch}}{{{currentValuePatch}}}{{else}}0{{/if}}{{#if prerelease}}-{{{prerelease}}}{{/if}}',
     },
   ],
 
   // https://docs.renovatebot.com/modules/datasource/custom/
   customDatasources: {
-    rcm: {
-        defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/{{packageName}}-versions.json'
+    basic: {
+      defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/{{packageName}}-versions.json'
+    },
+    complex: {
+      defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/{{packageName}}-versions.json'
     }
   },
 }

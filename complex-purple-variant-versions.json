@@ -1,0 +1,29 @@
+{
+  "releases": [
+    {
+      "version": "3.9.001",
+      "isDeprecated": false,
+      "releaseTimestamp": "2025-01-24T18:21Z",
+      "isStable": true
+    },
+    {
+      "version": "3.9.001-limited-12-24",
+      "isDeprecated": false,
+      "releaseTimestamp": "2024-12-24T18:21Z",
+      "isStable": true
+    },
+    {
+      "version": "3.8.003",
+      "isDeprecated": true,
+      "releaseTimestamp": "2023-12-24T18:21Z",
+      "isStable": true
+    },
+    {
+      "version": "3.8.001",
+      "isDeprecated": true,
+      "releaseTimestamp": "2022-12-24T18:21Z",
+      "isStable": false
+    }
+  ],
+  "homepage": "https://github.com/grayside/renovate-custom-manager-demo#complex-variant-versioning"
+}
