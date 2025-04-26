@@ -5,11 +5,12 @@
   customManagers: [
     {
       customType: 'regex',
-      fileMatch: ['README.md', '*.js$'],
+      fileMatch: ['README.md', '\.js$'],
       matchStrings: [
-         "rcm-v<currentValue>",
+         'rcm-v(?<currentValue>\d*?)',
       ],
-      datasourceTemplate: "custom.rcm",
+      datasourceTemplate: 'custom.rcm',
+      depNameTemplate: 'rcm'
       // Customizable: https://docs.renovatebot.com/modules/versioning/
       versioningTemplate: 'loose',
     },
@@ -18,7 +19,7 @@
   // https://docs.renovatebot.com/modules/datasource/custom/
   customDatasources: {
     rcm: {
-        defaultRegistryUrlTemplate: "https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/rcm-versions.json"
+        defaultRegistryUrlTemplate: 'https://raw.githubusercontent.com/grayside/renovate-custom-manager-demo/refs/heads/main/rcm-versions.json'
     }
   }
 }
